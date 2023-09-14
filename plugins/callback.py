@@ -13,13 +13,13 @@ async def give_access_handler(c:Client,query: CallbackQuery):
         group = await db.get_group(group_id)
 
         if group["has_access"] and await db.is_group_verified(group_id):
-            return query.answer("Group already have access", show_alert=True)
+            return query.answer("Gʀᴏᴜᴘ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇ ᴀᴄᴄᴇss", show_alert=True)
 
         update = await db.update_group(str(group_id).replace("-100", ""), {"has_access": True, "last_verified":datetime.now()})
 
         txt = await query.edit_message_text(f"Group [{group_id}] has access",)
 
-        return await c.send_message(from_user, f"Your group has been Licensed by Owner. Now you can add your own Database channel for {Config.VERIFIED_TIME} days.")
+        return await c.send_message(from_user, f"Yᴏᴜʀ ɢʀᴏᴜᴘ ʜᴀs ʙᴇᴇɴ Lɪᴄᴇɴsᴇᴅ ʙʏ Oᴡɴᴇʀ. Nᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴀᴅᴅ ʏᴏᴜʀ ᴏᴡɴ Dᴀᴛᴀʙᴀsᴇ ᴄʜᴀɴɴᴇʟ ғᴏʀ {Config.VERIFIED_TIME} Dᴀʏs.")
     except Exception as e:
         print(e)
 
@@ -36,8 +36,8 @@ async def dbgive_access_handler(c:Client,query: CallbackQuery):
         except Exception as e:
             print(e)
 
-        await query.edit_message_text("Database Channel Verified. Make sure you have joined the channel")
-        return await c.send_message(from_user, f"Your channel {db_channel} has been verified. @MOVIES_VILLA_SEARCH_BOT will search posts from your Database channel in your group")
+        await query.edit_message_text("Dᴀᴛᴀʙᴀsᴇ Cʜᴀɴɴᴇʟ Vᴇʀɪғɪᴇᴅ. Mᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ʜᴀᴠᴇ Jᴏɪɴᴇᴅ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ")
+        return await c.send_message(from_user, f"Yᴏᴜʀ ᴄʜᴀɴɴᴇʟ {db_channel} ʜᴀs ʙᴇᴇɴ ᴠᴇʀɪғɪᴇᴅ. ᴡɪʟʟ sᴇᴀʀᴄʜ ᴘᴏsᴛs ғʀᴏᴍ ʏᴏᴜʀ Dᴀᴛᴀʙᴀsᴇ ᴄʜᴀɴɴᴇʟ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ")
     except Exception as e:
         print(e)
 
@@ -45,8 +45,8 @@ async def dbgive_access_handler(c:Client,query: CallbackQuery):
 async def dbdeny_access_handler(c:Client,query: CallbackQuery):
     from_user = int(query.data.split("#")[1])
     db_channel = int(query.data.split("#")[2])
-    await query.edit_message_text("Database Channel has been rejected successfully")
-    return await c.send_message(from_user, f"Your request for channel [`{db_channel}`] has been rejected by Bot Owner Please Contact admin For More Information")
+    await query.edit_message_text("Dᴀᴛᴀʙᴀsᴇ Cʜᴀɴɴᴇʟ ʜᴀs ʙᴇᴇɴ ʀᴇJᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
+    return await c.send_message(from_user, f"Yᴏᴜʀ ʀᴇǫᴜᴇsᴛ ғᴏʀ ᴄʜᴀɴɴᴇʟ [`{db_channel}`] ʜᴀs ʙᴇᴇɴ ʀᴇJᴇᴄᴛᴇᴅ ʙʏ Bᴏᴛ Oᴡɴᴇʀ Pʟᴇᴀsᴇ Cᴏɴᴛᴀᴄᴛ ᴀᴅᴍɪɴ Fᴏʀ Mᴏʀᴇ Iɴғᴏʀᴍᴀᴛɪᴏɴ")
 
 
 @Client.on_callback_query(filters.regex(r"^deny_access"))
@@ -55,8 +55,8 @@ async def deny_access_handler(c:Client,query: CallbackQuery):
     from_user = int(query.data.split("#")[2])
     user = await db.get_group(str(group_id))
     await db.update_group(str(group_id), {"has_access": False})
-    await query.edit_message_text("Group has been rejected successfully")
-    return await c.send_message(from_user, "Your request has been rejected by Admin to add your own db channel")
+    await query.edit_message_text("Gʀᴏᴜᴘ ʜᴀs ʙᴇᴇɴ ʀᴇJᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ")
+    return await c.send_message(from_user, "Yᴏᴜʀ ʀᴇǫᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ ʀᴇJᴇᴄᴛᴇᴅ ʙʏ Aᴅᴍɪɴ ᴛᴏ ᴀᴅᴅ ʏᴏᴜʀ ᴏᴡɴ ᴅʙ ᴄʜᴀɴɴᴇʟ")
 
 
 @Client.on_callback_query(filters.regex(r"^request_access"))
@@ -64,7 +64,7 @@ async def request_access_handler(c:Client,query: CallbackQuery):
     group_id = int(query.data.split("#")[1])
     user = await db.get_group(group_id)
     if user["has_access"] and await db.is_group_verified(group_id):
-        return await query.message.reply("You already have access to this Bot")
+        return await query.message.reply("Yᴏᴜ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇ ᴀᴄᴄᴇss ᴛᴏ ᴛʜɪs Bᴏᴛ")
     else: 
 
         REPLY_MARKUP = InlineKeyboardMarkup([
@@ -85,7 +85,7 @@ Group ID: {group_id}
 Give Access: `/give_access {group_id} no_of_days`
 Deny Access: `/deny_access `{group_id}`""", reply_markup=REPLY_MARKUP)
 
-        await query.edit_message_text("Your Request has been Successfully Sent to Bot Owner. You will be notified Privately when Admin accepts your request")
+        await query.edit_message_text("Yᴏᴜʀ Rᴇǫᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ Sᴜᴄᴄᴇssғᴜʟʟʏ Sᴇɴᴛ ᴛᴏ Bᴏᴛ Oᴡɴᴇʀ. Yᴏᴜ ᴡɪʟʟ ʙᴇ ɴᴏᴛɪғɪᴇᴅ Pʀɪᴠᴀᴛᴇʟʏ ᴡʜᴇɴ Aᴅᴍɪɴ ᴀᴄᴄᴇᴘᴛs ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ")
 
 
 @Client.on_callback_query()
@@ -119,7 +119,7 @@ async def button(bot, cmd: CallbackQuery):
             ], 
                                         [
                         InlineKeyboardButton("How To Watch?", callback_data="Watch_msg"),
-                        InlineKeyboardButton('Support', url='https://t.me/novies_update_channel')
+                        InlineKeyboardButton('Support', url='https://t.me/movies_villa_backup')
                     ]
                 ]
             ),
@@ -189,7 +189,7 @@ async def button(bot, cmd: CallbackQuery):
             ], 
                                         [
                         InlineKeyboardButton("Terabox", callback_data="Terabox_msg"),
-                        InlineKeyboardButton('Watch Video', url='https://t.me/novies_update_channel/3')
+                        InlineKeyboardButton('Watch Video', url='https://t.me/movies_villa_backup')
                     ],[
                         InlineKeyboardButton("Back", callback_data="Watch_msg")
                     ]
