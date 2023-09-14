@@ -109,7 +109,7 @@ async def message_handler(event):
     '''
 
             newbutton = [Button.url('Request Movie🍿',
-                                    f't.me/MOVIES_VILLA_SEARCH_BOT?start=watch')]
+                                    f't.me/MOVIES_VILLA_POST_FIND_BOT?start=watch')]
 
             await txt.delete()
             result = await event.reply(answer, buttons=newbutton, link_preview=False)
@@ -132,7 +132,7 @@ async def message_handler(event):
         message = f'**Click Here 👇 For "{event.text}"**\n\n[🍿🎬 {str(event.text).upper()}\n🍿🎬 {str("Click me for results").upper()}]({tgraph_result})'
 
         newbutton = [Button.url('How To Watch ❓',
-                                    f'https://t.me/novies_update_channel/3')]
+                                    f'https://t.me/movies_villa_backup')]
 
         await txt.delete()
         await asyncio.sleep(0.5)
@@ -144,7 +144,7 @@ async def message_handler(event):
     except Exception as e:
         print(e)
         await txt.delete()
-        result = await event.reply("I am Unable Search,Please Search In. @MOVIES_VILLA_SEARCH_BOT🙏")
+        result = await event.reply("I am Unable Search,Please Search In. @MOVIES_VILLA_POST_FIND_BOT🙏")
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         await event.delete() 
         return await result.delete()
