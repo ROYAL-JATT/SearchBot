@@ -14,10 +14,10 @@ async def connnect_group(c: Client, m: Message):
         group_id=m.command[1]
 
         if await db.get_group(group_id):
-            return await m.reply('Group Already Connected')
+            return await m.reply('Gʀᴏᴜᴘ Aʟʀᴇᴀᴅʏ Cᴏɴɴᴇᴄᴛᴇᴅ')
         else:
             await db.connect(group_id=group_id)
-            return await m.reply('Group connected successfully')
+            return await m.reply('Gʀᴏᴜᴘ ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ')
 
 
 
@@ -33,6 +33,6 @@ async def disconnnect_group(c: Client, m: Message):
 
         if await db.get_group(group_id):
             await db.disconnect(group_id=group_id)
-            return await m.reply('Group disconnected')
+            return await m.reply('Gʀᴏᴜᴘ ᴅɪsᴄᴏɴɴᴇᴄᴛᴇᴅ')
         else:
-            return await m.reply('Group is not connected')
+            return await m.reply('Gʀᴏᴜᴘ ɪs ɴᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ')
