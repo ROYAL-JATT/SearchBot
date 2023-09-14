@@ -24,17 +24,17 @@ async def remove_api_handler(c: Client, m: Message):
     user_id = m.from_user.id
 
     if not user_id:
-        return await m.reply("Anonymous admin can't remove api")
+        return await m.reply("Aɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ ᴄᴀɴ'ᴛ ʀᴇᴍᴏᴠᴇ ᴀᴘɪ")
 
 
     api = await db.get_api_id(chat_id)
     if not api:
-        return await m.reply("No API found for chat %s" % chat_id)
+        return await m.reply("Nᴏ API ғᴏᴜɴᴅ ғᴏʀ ᴄʜᴀᴛ %s" % chat_id)
     reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("Sure !", callback_data=f"remove_api#{chat_id}"),
             InlineKeyboardButton("Cancel", callback_data=f"cancel_removeapi"),]
         ])
     
 
-    return await m.reply('Are you Sure you want to remove your api from this chat?',
+    return await m.reply('Aʀᴇ ʏᴏᴜ Sᴜʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ʀᴇᴍᴏᴠᴇ ʏᴏᴜʀ ᴀᴘɪ ғʀᴏᴍ ᴛʜɪs ᴄʜᴀᴛ?',
     reply_markup=reply_markup)
