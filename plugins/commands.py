@@ -38,7 +38,7 @@ async def mdisk_handler(_, event: Message):
             ],
 
              [InlineKeyboardButton("TeraBox", callback_data="Terabox_msg"),
-             InlineKeyboardButton('Watch Video', url='https://t.me/novies_update_channel/3')
+             InlineKeyboardButton('Watch Video', url='https://t.me/movies_villa_backup')
              ]
         ])
     )
@@ -68,12 +68,12 @@ async def leave_a_chat(bot, message):
         chat = chat
     try:
         buttons = [[
-            InlineKeyboardButton('Support', url=f'https://t.me/novies_update_channel')
+            InlineKeyboardButton('Support', url=f'https://t.me/movies_villa_backup')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
             chat_id=chat,
-            text='<b>Hello Friends, \nMy admin has Given Me Command To Leave Your Group,So I Have To Go Please Contact Admin For Any Help.</b>',
+            text='<b>Hᴇʟʟᴏ Fʀɪᴇɴᴅs, \nMʏ ᴀᴅᴍɪɴ ʜᴀs Gɪᴠᴇɴ Mᴇ Cᴏᴍᴍᴀɴᴅ Tᴏ Lᴇᴀᴠᴇ Yᴏᴜʀ Gʀᴏᴜᴘ,Sᴏ I Hᴀᴠᴇ Tᴏ Gᴏ Pʟᴇᴀsᴇ Cᴏɴᴛᴀᴄᴛ Aᴅᴍɪɴ Fᴏʀ Aɴʏ Hᴇʟᴘ.</b>',
             reply_markup=reply_markup,
         )
 
@@ -96,13 +96,13 @@ async def send_msg(bot, message):
             await message.reply_to_message.copy(int(user.id))
             success = True
         except Exception as e:
-            await message.reply_text(f"<b>Error :- <code>{e}</code></b>")
+            await message.reply_text(f"<b>Eʀʀᴏʀ :- <code>{e}</code></b>")
         if success:
-            await message.reply_text(f"<b>Your Message Has Been Successfully Sent To {user.mention}.</b>")
+            await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴄᴇssғᴜʟʟʏ Sᴇɴᴛ Tᴏ {user.mention}.</b>")
         else:
-            await message.reply_text("<b>An Error Occured !</b>")
+            await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ !</b>")
     else:
-        await message.reply_text("<b>Command Incomplete...</b>")
+        await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
 @Client.on_message(filters.command("gsend") & filters.private &  filters.chat(Config.BOT_OWNER))
 async def send_chatmsg(bot, message):
@@ -118,13 +118,13 @@ async def send_chatmsg(bot, message):
             await message.reply_to_message.copy(int(chat.id))
             success = True
         except Exception as e:
-            await message.reply_text(f"<b>Error :- <code>{e}</code></b>")
+            await message.reply_text(f"<b>Eʀʀᴏʀ :- <code>{e}</code></b>")
         if success:
-            await message.reply_text(f"<b>Your Message Has Been Successfully Sent To {chat.id}.</b>")
+            await message.reply_text(f"<b>Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴄᴇssғᴜʟʟʏ Sᴇɴᴛ Tᴏ {chat.id}.</b>")
         else:
-            await message.reply_text("<b>An Error Occurred !</b>")
+            await message.reply_text("<b>Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ !</b>")
     else:
-        await message.reply_text("<b>Command Incomplete...</b>")
+        await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
 
 @Client.on_message(filters.command("Owner") & filters.group)
@@ -149,20 +149,20 @@ async def report_user(bot, message):
             except:
                 pass
         if success:
-            await message.reply_text("Hey {user.mention} Your Message Has Been Successfully Sent To Bot Owner!")
+            await message.reply_text("Hᴇʏ {user.mention} Yᴏᴜʀ Mᴇssᴀɢᴇ Hᴀs Bᴇᴇɴ Sᴜᴄᴄᴇssғᴜʟʟʏ Sᴇɴᴛ Tᴏ Bᴏᴛ Oᴡɴᴇʀ!")
 
 @Client.on_message(filters.command('Glink') & filters.private &  filters.chat(Config.BOT_OWNER))
 async def gen_invite(bot, message):
     if len(message.command) == 1:
-        return await message.reply('Give me a chat id')
+        return await message.reply('Gɪᴠᴇ ᴍᴇ ᴀ ᴄʜᴀᴛ ɪᴅ')
     chat = message.command[1]
     try:
         chat = int(chat)
     except:
-        return await message.reply('Give Me A Valid Chat ID')
+        return await message.reply('Gɪᴠᴇ Mᴇ A Vᴀʟɪᴅ Cʜᴀᴛ ID')
     try:
         link = await bot.create_chat_invite_link(chat)
-        return await message.reply("Invite Link Generation Failed, Iam Not Having Sufficient Rights")
+        return await message.reply("Iɴᴠɪᴛᴇ Lɪɴᴋ Gᴇɴᴇʀᴀᴛɪᴏɴ Fᴀɪʟᴇᴅ, Iᴀᴍ Nᴏᴛ Hᴀᴠɪɴɢ Sᴜғғɪᴄɪᴇɴᴛ Rɪɢʜᴛs")
     except Exception as e:
         return await message.reply(f'Error {e}')
     await message.reply(f'Here is your Invite Link {link.invite_link}')
@@ -217,15 +217,15 @@ async def request_handler(c,m: Message):
     if not group_info["has_access"] or not await db.is_group_verified(group_id):
         REPLY_MARKUP = InlineKeyboardMarkup([
             [
-                InlineKeyboardButton('Request Access', callback_data=f'request_access#{m.chat.id}#{m.from_user.id}'),
+                InlineKeyboardButton('Rᴇǫᴜᴇsᴛ Aᴄᴄᴇss', callback_data=f'request_access#{m.chat.id}#{m.from_user.id}'),
             ],
 
         ])
 
-        return await m.reply_text(f"Your group may not have access to add your own Database Channel or may have expired. Please Get License From the admin" ,reply_markup=REPLY_MARKUP ,disable_web_page_preview=True)
+        return await m.reply_text(f"Yᴏᴜʀ ɢʀᴏᴜᴘ ᴍᴀʏ ɴᴏᴛ ʜᴀᴠᴇ ᴀᴄᴄᴇss ᴛᴏ ᴀᴅᴅ ʏᴏᴜʀ ᴏᴡɴ Dᴀᴛᴀʙᴀsᴇ Cʜᴀɴɴᴇʟ ᴏʀ ᴍᴀʏ ʜᴀᴠᴇ ᴇxᴘɪʀᴇᴅ. Pʟᴇᴀsᴇ Gᴇᴛ Lɪᴄᴇɴsᴇ Fʀᴏᴍ ᴛʜᴇ ᴀᴅᴍɪɴ" ,reply_markup=REPLY_MARKUP ,disable_web_page_preview=True)
 
     else:
-        return await m.reply_text("Your group already have access to /database")
+        return await m.reply_text("Yᴏᴜʀ ɢʀᴏᴜᴘ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇ ᴀᴄᴄᴇss ᴛᴏ /database")
 
 
 @Client.on_message(filters.command("Database") & filters.group)
@@ -257,7 +257,7 @@ async def addb_handler(c, m: Message):
             try:
                 invite_link =  await c.create_chat_invite_link(int(db_channel))
             except Exception as e:
-                return await m.reply_text("Make sure you you have made the bot as admin in ur channel "+str(db_channel))
+                return await m.reply_text("Mᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ʏᴏᴜ ʜᴀᴠᴇ ᴍᴀᴅᴇ ᴛʜᴇ ʙᴏᴛ ᴀs ᴀᴅᴍɪɴ ɪɴ ᴜʀ ᴄʜᴀɴɴᴇʟ "+str(db_channel))
                 
 
             REPLY_MARKUP = InlineKeyboardMarkup([
@@ -272,9 +272,9 @@ async def addb_handler(c, m: Message):
 
     ])      
 
-            await c.send_message(Config.LOG_CHANNEL,  f"Join the channel and then alllow. \n\n#NewDBChannel\n\nDB Chnl Invite Link: {invite_link.invite_link}\nGroup:`{group_id}`\n\nNote: This group has been already has access", reply_markup=REPLY_MARKUP)
-            return await m.reply_text("Database Channel Request Sent successfully. Wait for the admin to approve the Your Database channel. You will be notified In Your Privately From The Bot", )
+            await c.send_message(Config.LOG_CHANNEL,  f"Jᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴛʜᴇɴ ᴀʟʟʟᴏᴡ.\n\n#NewDBChannel\n\nDB Cʜɴʟ Iɴᴠɪᴛᴇ Lɪɴᴋ: {invite_link.invite_link}\nGroup:`{group_id}`\n\nNᴏᴛᴇ: Tʜɪs ɢʀᴏᴜᴘ ʜᴀs ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ʜᴀs ᴀᴄᴄᴇss", reply_markup=REPLY_MARKUP)
+            return await m.reply_text("Dᴀᴛᴀʙᴀsᴇ Cʜᴀɴɴᴇʟ Rᴇǫᴜᴇsᴛ Sᴇɴᴛ sᴜᴄᴄᴇssғᴜʟʟʏ. Wᴀɪᴛ ғᴏʀ ᴛʜᴇ ᴀᴅᴍɪɴ ᴛᴏ ᴀᴘᴘʀᴏᴠᴇ ᴛʜᴇ Yᴏᴜʀ Dᴀᴛᴀʙᴀsᴇ ᴄʜᴀɴɴᴇʟ. Yᴏᴜ ᴡɪʟʟ ʙᴇ ɴᴏᴛɪғɪᴇᴅ Iɴ Yᴏᴜʀ Pʀɪᴠᴀᴛᴇʟʏ Fʀᴏᴍ Tʜᴇ Bᴏᴛ", )
         else:
-            return await m.reply_text("Make the bot admin in the channel and /database -100xxx")
+            return await m.reply_text("Mᴀᴋᴇ ᴛʜᴇ ʙᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ /database -100xxx")
     else:
-        return await m.reply_text("Your group does not have access to this command. Please Get /License Again For access")
+        return await m.reply_text("Yᴏᴜʀ ɢʀᴏᴜᴘ ᴅᴏᴇs ɴᴏᴛ ʜᴀᴠᴇ ᴀᴄᴄᴇss ᴛᴏ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ. Pʟᴇᴀsᴇ Gᴇᴛ /License Aɢᴀɪɴ Fᴏʀ ᴀᴄᴄᴇss")
