@@ -45,7 +45,7 @@ Jᴜsᴛ Tʏᴘᴇ ᴀ Mᴏᴠɪᴇ Nᴀᴍᴇ 🎬**""" )
 
 i ɴᴏᴛ ꜱᴛᴏʀᴇ ᴀɴʏ ꜰɪʟᴇꜱ ᴏʀ ᴛᴇxᴛ ɪɴ  ᴍʏ ᴅᴀᴛᴀʙᴀꜱᴇ.
 
-ᴅᴍ ꜰᴏʀ ᴀɴʏ Qᴜᴇʀʏ 👉 <a href='https://t.me/ROYAL_GAGAN_DEEP_SINGH_MEHRA'>Oᴡɴᴇʀ</a>https://github.com/ROYAL-JATT/SearchBot  🤖""" )
+ᴅᴍ ꜰᴏʀ ᴀɴʏ Qᴜᴇʀʏ 👉 <a href='https://t.me/ROYAL_GAGAN_DEEP_SINGH_MEHRA'>Oᴡɴᴇʀ</a> 🤖""" )
     ABOUT_WATCH_TEXT = """
 ʜᴇʏ ʙᴜᴅᴅʏ, 
 
